@@ -72,7 +72,7 @@ exports.update = async (req, res) => {}
 
 //nota: verifique las políticas de seguridad y reglas de negocio
 //eliminar
-exports.remover = async (req, res) => {
+exports.remove = async (req, res) => {
   //¿es posible eliminar tu propio usuario?
   // SI - NO [X]
   if (Number(req.params.id) === req.user.id){
