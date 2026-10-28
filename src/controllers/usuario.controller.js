@@ -86,3 +86,4 @@ exports.remover = async (req, res) => {
   if (!num) throw httpError(404, "usuario no existe")
   res.json({ message: 'usuario eliminado'})
 }
+

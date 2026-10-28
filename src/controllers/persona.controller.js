@@ -17,6 +17,9 @@ const pick = (body) => {
   )
 }
 
+//lista completa de personas
+//select * from tabla
+//get búsqueda = where condicion
 exports.list = async (req, res) => {
   res.json(
     await db("personas")
@@ -25,12 +28,15 @@ exports.list = async (req, res) => {
   )
 }
 
+//buscar
 exports.get = async (req, res) => {
   const row = await db("personas").where({ id: req.params.id }).first()
   if (!row) throw httpError(404, 'persona no encontrada')
   res.json(row)
 }
 
+
+//registrar
 exports.create = async (req, res) => {
 
   //campos obligatorios

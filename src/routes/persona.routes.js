@@ -4,10 +4,12 @@ const c = require('../controllers/persona.controller')
 //RECUERDA:
 //las rutas requieren las funcionalidades en los controladores
 
-router.get('/')
-router.get('/:id')
-router.post('/')
-router.put('/:id')
-router.delete('/:id')
+//router.verbo('/ruta', controlador.accion)
+
+router.get('/', c.list) //listar
+router.get('/:id', c.get) //buscar
+router.post('/', c.create) //registrar
+router.put('/:id', c.update) //modificar
+router.delete('/:id', c.remove) // eliminar
 
 module.exports = router
