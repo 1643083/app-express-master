@@ -82,7 +82,7 @@ exports.update = async (req, res) => {
 
   //actualizando el objeto "data" con el nivel de acceso que ingresa
   if (nivel_acceso) { data.nivel_acceso = nivel_acceso }
-  if (estado !== undefined) { data.estado = estado }
+  if (estado !== undefined) { data.estado = !!estado } // ! = convertimos el valor a su equivalente lógico, !! = invertir el valor
   if (clave_acceso) { data.clave_acceso = await bcrypt.hash(clave_acceso, 10) }
 
   //¿por qué se utiliza req.params?
